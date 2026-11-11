@@ -1,0 +1,1080 @@
+<!doctype html>
+<html lang="es" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Ramón Ramírez | Senior Software Architect & Full-Stack Engineer
+    </title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              dark: {
+                900: "#0a0a0a",
+                800: "#171717",
+                700: "#262626",
+              },
+            },
+          },
+        },
+      };
+    </script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+      html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 5rem;
+      }
+    </style>
+  </head>
+  <body
+    class="bg-white text-dark-900 font-sans antialiased selection:bg-dark-900 selection:text-white"
+  >
+    <!-- HEADER / NAVIGATION -->
+    <header
+      class="fixed top-0 left-0 w-full z-40 bg-white/95 backdrop-blur-md border-b border-gray-200 transition-all duration-300"
+    >
+      <div
+        class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between"
+      >
+        <!-- Brand / Logo -->
+        <a href="#" class="flex items-center gap-2 group">
+          <div
+            class="w-10 h-10 bg-dark-900 text-white font-bold flex items-center justify-center rounded-lg tracking-tighter text-lg group-hover:bg-gray-800 transition-colors"
+          >
+            R³
+          </div>
+          <div class="flex flex-col">
+            <span
+              class="font-bold text-sm tracking-tight text-dark-900 leading-none"
+              >RAMÓN RAMÍREZ</span
+            >
+            <span
+              class="text-[10px] text-gray-500 font-mono tracking-wider mt-1"
+              >SOFTWARE ARCHITECT</span
+            >
+          </div>
+        </a>
+
+        <!-- Desktop Navigation -->
+        <nav
+          class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-600"
+        >
+          <a
+            href="#about"
+            class="nav-link hover:text-dark-900 transition-colors"
+            >Sobre mí</a
+          >
+          <a
+            href="#skills"
+            class="nav-link hover:text-dark-900 transition-colors"
+            >Habilidades</a
+          >
+          <a
+            href="#experience"
+            class="nav-link hover:text-dark-900 transition-colors"
+            >Experiencia</a
+          >
+          <a
+            href="#projects"
+            class="nav-link hover:text-dark-900 transition-colors"
+            >Proyectos & Apps</a
+          >
+          <a
+            href="#contact"
+            class="nav-link hover:text-dark-900 transition-colors"
+            >Contacto</a
+          >
+        </nav>
+
+        <!-- CTA / Action Button -->
+        <div class="hidden md:flex items-center gap-4">
+          <a
+            href="https://wa.me/584121727103?text=Hola%20Ram%C3%B3n,%20estoy%20interesado%20en%20conversar%20contigo%20sobre%20una%20propuesta%20profesional."
+            target="_blank"
+            class="px-6 py-3 bg-dark-900 hover:bg-gray-800 text-white text-xs font-semibold uppercase tracking-wider rounded-lg transition-all flex items-center gap-2 shadow-sm"
+          >
+            <i data-lucide="message-square" class="w-4 h-4"></i>
+            WhatsApp Directo
+          </a>
+        </div>
+
+        <!-- Mobile Menu Button (Left slide trigger) -->
+        <button
+          id="menu-btn"
+          class="md:hidden p-2.5 text-dark-900 hover:bg-gray-100 rounded-lg transition-colors focus:outline-none"
+          aria-label="Abrir menú"
+        >
+          <i data-lucide="menu" class="w-6 h-6"></i>
+        </button>
+      </div>
+    </header>
+
+    <!-- MOBILE LEFT DRAWER MENU -->
+    <div
+      id="mobile-menu"
+      class="fixed inset-y-0 left-0 z-50 w-72 h-full bg-white shadow-2xl flex flex-col border-r border-gray-200 transition-transform duration-300 ease-in-out -translate-x-full md:hidden"
+    >
+      <div
+        class="p-5 flex items-center justify-between border-b border-gray-100 bg-white"
+      >
+        <div class="flex items-center gap-2">
+          <div
+            class="w-8 h-8 bg-dark-900 text-white font-bold flex items-center justify-center rounded-md text-sm"
+          >
+            R³
+          </div>
+          <span class="font-bold text-sm tracking-tight">Navegación</span>
+        </div>
+        <button
+          id="close-menu-btn"
+          class="p-2 text-gray-500 hover:text-dark-900 rounded-lg focus:outline-none"
+        >
+          <i data-lucide="x" class="w-6 h-6"></i>
+        </button>
+      </div>
+      <div
+        class="p-6 flex flex-col gap-3 text-base font-medium text-gray-700 bg-white flex-1 overflow-y-auto"
+      >
+        <a
+          href="#about"
+          class="mobile-link block py-3 px-3 rounded-lg hover:bg-gray-100 transition-colors flex items-center gap-3"
+          ><i data-lucide="user" class="w-5 h-5 text-gray-500"></i> Sobre mí</a
+        >
+        <a
+          href="#skills"
+          class="mobile-link block py-3 px-3 rounded-lg hover:bg-gray-100 transition-colors flex items-center gap-3"
+          ><i data-lucide="cpu" class="w-5 h-5 text-gray-500"></i>
+          Habilidades</a
+        >
+        <a
+          href="#experience"
+          class="mobile-link block py-3 px-3 rounded-lg hover:bg-gray-100 transition-colors flex items-center gap-3"
+          ><i data-lucide="briefcase" class="w-5 h-5 text-gray-500"></i>
+          Experiencia</a
+        >
+        <a
+          href="#projects"
+          class="mobile-link block py-3 px-3 rounded-lg hover:bg-gray-100 transition-colors flex items-center gap-3"
+          ><i data-lucide="smartphone" class="w-5 h-5 text-gray-500"></i>
+          Proyectos & Apps</a
+        >
+        <a
+          href="#contact"
+          class="mobile-link block py-3 px-3 rounded-lg hover:bg-gray-100 transition-colors flex items-center gap-3"
+          ><i data-lucide="mail" class="w-5 h-5 text-gray-500"></i> Contacto</a
+        >
+        <hr class="border-gray-100 my-4" />
+        <a
+          href="https://wa.me/584121727103?text=Hola%20Ram%C3%B3n,%20estoy%20interesado%20en%20conversar%20contigo%20sobre%20una%20propuesta%20profesional."
+          target="_blank"
+          class="w-full py-4 bg-dark-900 text-white rounded-lg text-center font-semibold text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-sm"
+        >
+          <i data-lucide="message-square" class="w-4 h-4"></i> WhatsApp Directo
+        </a>
+      </div>
+    </div>
+    <!-- Overlay sólido oscuro -->
+    <div
+      id="menu-overlay"
+      class="fixed inset-0 bg-black/60 backdrop-blur-xs z-40 hidden md:hidden"
+    ></div>
+
+    <!-- HERO SECTION -->
+    <section
+      class="pt-36 pb-20 px-6 max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-12 border-b border-gray-100"
+    >
+      <div class="flex-1 space-y-6">
+        <div
+          class="inline-flex items-center gap-2 px-3 py-1.5 bg-gray-100 text-gray-700 rounded-full text-xs font-mono tracking-wide"
+        >
+          <span
+            class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"
+          ></span>
+          Disponible para proyectos y consultoría internacional
+        </div>
+        <h1
+          class="text-4xl sm:text-6xl font-extrabold tracking-tight text-dark-900 leading-[1.1]"
+        >
+          Arquitectura de Software
+          <span
+            class="text-transparent bg-clip-text bg-gradient-to-r from-gray-700 via-gray-900 to-black"
+            >& Full-Stack Engineering</span
+          >
+        </h1>
+        <p class="text-lg text-gray-600 max-w-2xl leading-relaxed">
+          Hola, soy <strong class="text-dark-900">Ramón Ramírez (R³)</strong>.
+          Ingeniero en Informática y Arquitecto Senior con más de 12 años
+          transformando retos complejos de negocio en sistemas distribuidos
+          robustos, aplicaciones móviles multiplataforma y plataformas de alto
+          rendimiento.
+        </p>
+        <div class="flex flex-wrap items-center gap-4 pt-2">
+          <a
+            href="https://wa.me/584121727103?text=Hola%20Ram%C3%B3n,%20estoy%20interesado%20en%20conversar%20contigo%20sobre%20una%20propuesta%20profesional."
+            target="_blank"
+            class="px-8 py-4 bg-dark-900 hover:bg-gray-800 text-white text-xs font-semibold uppercase tracking-wider rounded-lg transition-all shadow-sm flex items-center gap-2"
+          >
+            <i data-lucide="message-square" class="w-4 h-4"></i> Iniciar
+            Conversación WhatsApp
+          </a>
+          <a
+            href="#projects"
+            class="nav-link px-8 py-4 bg-gray-100 hover:bg-gray-200 text-dark-900 text-xs font-semibold uppercase tracking-wider rounded-lg transition-all flex items-center gap-2"
+          >
+            Ver Proyectos & Apps
+            <i data-lucide="arrow-down" class="w-4 h-4"></i>
+          </a>
+        </div>
+        <div
+          class="pt-6 grid grid-cols-3 gap-6 border-t border-gray-100 max-w-lg"
+        >
+          <div>
+            <div class="text-2xl font-bold text-dark-900">+12</div>
+            <div class="text-xs text-gray-500 font-medium">
+              Años de Trayectoria
+            </div>
+          </div>
+          <div>
+            <div class="text-2xl font-bold text-dark-900">>99.9%</div>
+            <div class="text-xs text-gray-500 font-medium">
+              Uptime en Producción
+            </div>
+          </div>
+          <div>
+            <div class="text-2xl font-bold text-dark-900">Multi</div>
+            <div class="text-xs text-gray-500 font-medium">Stack & Cloud</div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="w-full md:w-[420px] bg-gray-50 border border-gray-200 rounded-2xl p-8 shadow-sm relative overflow-hidden"
+      >
+        <div
+          class="absolute -right-10 -bottom-10 w-40 h-40 bg-gray-200 rounded-full blur-2xl opacity-50 pointer-events-none"
+        ></div>
+        <div class="flex items-center gap-4 mb-6">
+          <div
+            class="w-14 h-14 bg-dark-900 text-white rounded-xl flex items-center justify-center font-bold text-xl shadow-md"
+          >
+            R³
+          </div>
+          <div>
+            <h3 class="font-bold text-dark-900 text-base">Ramón Ramírez</h3>
+            <p class="text-xs text-gray-500 font-mono">
+              Caracas, Venezuela (Remoto Global)
+            </p>
+          </div>
+        </div>
+        <div class="space-y-3 text-sm text-gray-600 mb-6">
+          <div class="flex items-center gap-3">
+            <i data-lucide="shield-check" class="w-4 h-4 text-emerald-600"></i>
+            <span>Clean Architecture & BIAN Standards</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <i data-lucide="cpu" class="w-4 h-4 text-emerald-600"></i>
+            <span>Java, Node.js, PHP, Python, TypeScript</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <i data-lucide="smartphone" class="w-4 h-4 text-emerald-600"></i>
+            <span>Flutter, Android Kotlin, iOS Swift, Ionic</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <i data-lucide="cloud" class="w-4 h-4 text-emerald-600"></i>
+            <span>OpenShift, Docker Swarm, CI/CD, Redis</span>
+          </div>
+        </div>
+        <a
+          href="mailto:pnfiuty.rramirez@gmail.com"
+          class="w-full py-3.5 bg-white hover:bg-gray-100 border border-gray-300 text-dark-900 rounded-lg text-center font-semibold text-xs uppercase tracking-wider block transition-colors shadow-xs"
+        >
+          Enviar Correo Directo
+        </a>
+      </div>
+    </section>
+
+    <!-- ABOUT SECTION (Full Width) -->
+    <section
+      id="about"
+      class="py-20 px-6 max-w-7xl mx-auto border-b border-gray-100"
+    >
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div class="lg:col-span-5">
+          <h2
+            class="text-xs font-mono uppercase tracking-widest text-gray-500 mb-3"
+          >
+            Sobre Mí & Identidad
+          </h2>
+          <h3 class="text-3xl font-bold text-dark-900 leading-tight">
+            Ingeniería de software con visión holística y rigor técnico
+          </h3>
+        </div>
+        <div
+          class="lg:col-span-7 space-y-4 text-gray-600 leading-relaxed text-base"
+        >
+          <p>
+            ¿Qué significa
+            <strong class="text-dark-900 font-semibold">R³</strong>? Corresponde
+            a mis iniciales: <em class="text-gray-800">Ramón Ramírez</em>. A lo
+            largo de más de 12 años, he diseñado y evolucionado arquitecturas
+            backend y full-stack robustas para entornos de alta exigencia,
+            combinando metodologías de diseño guiado por el dominio (DDD), Clean
+            Architecture y estándares corporativos internacionales.
+          </p>
+          <p>
+            Mi enfoque une la precisión del código backend (Java, Spring Boot,
+            Quarkus, Node.js, Python) con la versatilidad en interfaces web
+            (Angular, React) y aplicaciones móviles multiplataforma (Flutter,
+            Kotlin, Swift). Además, integro de forma pragmática flujos de
+            automatización e IA cuando el problema de negocio lo amerita.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- TECHNICAL SKILLS -->
+    <section
+      id="skills"
+      class="py-20 px-6 max-w-7xl mx-auto border-b border-gray-100"
+    >
+      <div class="mb-12">
+        <h2
+          class="text-xs font-mono uppercase tracking-widest text-gray-500 mb-3"
+        >
+          Stack Tecnológico
+        </h2>
+        <h3 class="text-3xl font-bold text-dark-900">
+          Competencias Core & Enterprise
+        </h3>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="bg-gray-50 border border-gray-200 rounded-xl p-6">
+          <div
+            class="w-10 h-10 bg-dark-900 text-white rounded-lg flex items-center justify-center mb-4"
+          >
+            <i data-lucide="server" class="w-5 h-5"></i>
+          </div>
+          <h4 class="font-bold text-dark-900 mb-2">Backend & Frameworks</h4>
+          <p class="text-sm text-gray-600 leading-relaxed">
+            Java (Spring Boot, Quarkus), Node.js (NestJS, Express), PHP
+            (Laravel, Yii 2), Python (FastAPI, Flask, Django).
+          </p>
+        </div>
+        <div class="bg-gray-50 border border-gray-200 rounded-xl p-6">
+          <div
+            class="w-10 h-10 bg-dark-900 text-white rounded-lg flex items-center justify-center mb-4"
+          >
+            <i data-lucide="database" class="w-5 h-5"></i>
+          </div>
+          <h4 class="font-bold text-dark-900 mb-2">Bases de Datos & Caché</h4>
+          <p class="text-sm text-gray-600 leading-relaxed">
+            Oracle DB, IBM DB2, PostgreSQL, SQL Server, MySQL, MongoDB, Redis
+            (Distributed Caching), ChromaDB, pgvector.
+          </p>
+        </div>
+        <div class="bg-gray-50 border border-gray-200 rounded-xl p-6">
+          <div
+            class="w-10 h-10 bg-dark-900 text-white rounded-lg flex items-center justify-center mb-4"
+          >
+            <i data-lucide="smartphone" class="w-5 h-5"></i>
+          </div>
+          <h4 class="font-bold text-dark-900 mb-2">Móvil & Frontend</h4>
+          <p class="text-sm text-gray-600 leading-relaxed">
+            Flutter, Android (Kotlin), iOS (Swift), Ionic Cordova, TypeScript,
+            Angular, React, Tailwind CSS.
+          </p>
+        </div>
+        <div class="bg-gray-50 border border-gray-200 rounded-xl p-6">
+          <div
+            class="w-10 h-10 bg-dark-900 text-white rounded-lg flex items-center justify-center mb-4"
+          >
+            <i data-lucide="layers" class="w-5 h-5"></i>
+          </div>
+          <h4 class="font-bold text-dark-900 mb-2">
+            Arquitectura & Estándares
+          </h4>
+          <p class="text-sm text-gray-600 leading-relaxed">
+            BIAN, Clean Architecture (Hexagonal), Domain-Driven Design (DDD),
+            Microservices, Event-Driven, WebSockets, REST/SOAP.
+          </p>
+        </div>
+        <div class="bg-gray-50 border border-gray-200 rounded-xl p-6">
+          <div
+            class="w-10 h-10 bg-dark-900 text-white rounded-lg flex items-center justify-center mb-4"
+          >
+            <i data-lucide="cloud" class="w-5 h-5"></i>
+          </div>
+          <h4 class="font-bold text-dark-900 mb-2">Cloud, DevOps & Infra</h4>
+          <p class="text-sm text-gray-600 leading-relaxed">
+            Red Hat OpenShift, Docker, Docker Swarm, CI/CD (GitLab), Nginx,
+            Linux SysAdmin, Grafana, Loki, Prometheus.
+          </p>
+        </div>
+        <div class="bg-gray-50 border border-gray-200 rounded-xl p-6">
+          <div
+            class="w-10 h-10 bg-dark-900 text-white rounded-lg flex items-center justify-center mb-4"
+          >
+            <i data-lucide="bot" class="w-5 h-5"></i>
+          </div>
+          <h4 class="font-bold text-dark-900 mb-2">
+            IA Aplicada & Herramientas
+          </h4>
+          <p class="text-sm text-gray-600 leading-relaxed">
+            LangChain, LangGraph, RAG, Integración de LLMs (GPT-4, Claude,
+            DeepSeek), Protocolo MCP, OCR, ETL Pipelines.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE SECTION -->
+    <section
+      id="experience"
+      class="py-20 px-6 max-w-7xl mx-auto border-b border-gray-100"
+    >
+      <div class="mb-12">
+        <h2
+          class="text-xs font-mono uppercase tracking-widest text-gray-500 mb-3"
+        >
+          Trayectoria Profesional
+        </h2>
+        <h3 class="text-3xl font-bold text-dark-900">Experiencia Laboral</h3>
+      </div>
+      <div class="space-y-12">
+        <!-- Experience Item 1 -->
+        <div class="border-l-2 border-dark-900 pl-6 md:pl-8 relative">
+          <div
+            class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-dark-900 border-2 border-white"
+          ></div>
+          <div
+            class="flex flex-col md:flex-row md:items-center justify-between mb-2"
+          >
+            <h4 class="text-xl font-bold text-dark-900">
+              Arquitecto de Software & Lead Full Stack Engineer
+            </h4>
+            <span
+              class="text-xs font-mono font-semibold px-2.5 py-1 bg-gray-100 text-gray-700 rounded-md w-fit mt-1 md:mt-0"
+              >2024 – Actualidad</span
+            >
+          </div>
+          <div class="text-sm font-semibold text-gray-700 mb-4">
+            CYNOPIA LTD • Caracas, Venezuela
+          </div>
+          <ul
+            class="space-y-2 text-sm text-gray-600 list-disc list-inside leading-relaxed"
+          >
+            <li>
+              Liderazgo en la definición arquitectónica y desarrollo backend
+              (Java, PHP, Node.js, Python) para sistemas de alta disponibilidad.
+            </li>
+            <li>
+              Diseño de esquemas relacionales y NoSQL junto a caché en Redis
+              para mitigar cuellos de botella por alta demanda transaccional.
+            </li>
+            <li>
+              Desarrollo de interfaces frontend desacopladas en TypeScript
+              (Angular, React) y aplicaciones móviles multiplataforma.
+            </li>
+            <li>
+              Implementación de pipelines CI/CD, monitoreo centralizado con
+              Grafana/Loki y flujos de automatización con IA y agentes LLM.
+            </li>
+          </ul>
+        </div>
+
+        <!-- Experience Item 2 -->
+        <div class="border-l-2 border-gray-300 pl-6 md:pl-8 relative">
+          <div
+            class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-gray-300 border-2 border-white"
+          ></div>
+          <div
+            class="flex flex-col md:flex-row md:items-center justify-between mb-2"
+          >
+            <h4 class="text-xl font-bold text-dark-900">
+              Arquitecto de Software & Senior Backend Developer
+            </h4>
+            <span
+              class="text-xs font-mono font-semibold px-2.5 py-1 bg-gray-100 text-gray-700 rounded-md w-fit mt-1 md:mt-0"
+              >2023 – 2024</span
+            >
+          </div>
+          <div class="text-sm font-semibold text-gray-700 mb-4">
+            PRANICAL TECHNOLOGIES • Caracas, Venezuela
+          </div>
+          <ul
+            class="space-y-2 text-sm text-gray-600 list-disc list-inside leading-relaxed"
+          >
+            <li>
+              Implementación de APIs multicapa bajo el estándar bancario BIAN,
+              Clean Architecture y DDD con Java (Spring Boot, Quarkus).
+            </li>
+            <li>
+              Optimización y modelado de procedimientos almacenados complejos en
+              Oracle DB y DB2 para asegurar la integridad transaccional.
+            </li>
+            <li>
+              Automatización y despliegue de microservicios en Red Hat
+              OpenShift, optimizando tiempos de entrega operativos.
+            </li>
+          </ul>
+        </div>
+
+        <!-- Experience Item 3 -->
+        <div class="border-l-2 border-gray-300 pl-6 md:pl-8 relative">
+          <div
+            class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-gray-300 border-2 border-white"
+          ></div>
+          <div
+            class="flex flex-col md:flex-row md:items-center justify-between mb-2"
+          >
+            <h4 class="text-xl font-bold text-dark-900">
+              Consultor de Desarrollo de Tecnología & Full Stack
+            </h4>
+            <span
+              class="text-xs font-mono font-semibold px-2.5 py-1 bg-gray-100 text-gray-700 rounded-md w-fit mt-1 md:mt-0"
+              >2017 – 2023</span
+            >
+          </div>
+          <div class="text-sm font-semibold text-gray-700 mb-4">
+            CYNOPIA LTD • Caracas, Venezuela
+          </div>
+          <ul
+            class="space-y-2 text-sm text-gray-600 list-disc list-inside leading-relaxed"
+          >
+            <li>
+              Desarrollo y escalado de plataformas backend multi-motor
+              (PostgreSQL, MySQL, Oracle, MongoDB, Redis).
+            </li>
+            <li>
+              Liderazgo en la migración de sistemas monolíticos a microservicios
+              con despliegue CI/CD en GitLab y Docker.
+            </li>
+            <li>
+              Construcción de aplicaciones móviles corporativas integrando
+              librerías de lectura OCR y procesamiento de lenguaje natural
+              (NLP).
+            </li>
+          </ul>
+        </div>
+
+        <!-- Experience Item 4 -->
+        <div class="border-l-2 border-gray-300 pl-6 md:pl-8 relative">
+          <div
+            class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-gray-300 border-2 border-white"
+          ></div>
+          <div
+            class="flex flex-col md:flex-row md:items-center justify-between mb-2"
+          >
+            <h4 class="text-xl font-bold text-dark-900">
+              Especialista de Sistemas & Analista Backend
+            </h4>
+            <span
+              class="text-xs font-mono font-semibold px-2.5 py-1 bg-gray-100 text-gray-700 rounded-md w-fit mt-1 md:mt-0"
+              >2014 – 2017</span
+            >
+          </div>
+          <div class="text-sm font-semibold text-gray-700 mb-4">
+            DIARIO EL UNIVERSAL / INVERSIONES SACET • Remoto / Caracas
+          </div>
+          <ul
+            class="space-y-2 text-sm text-gray-600 list-disc list-inside leading-relaxed"
+          >
+            <li>
+              Implementación de pipelines ETL automatizados en tiempo real sobre
+              Oracle DB para procesamiento masivo de datos XML.
+            </li>
+            <li>
+              Desarrollo de APIs REST para visualización de estadísticas
+              deportivas y plataformas web corporativas internas.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS & MOBILE APPS SECTION -->
+    <section
+      id="projects"
+      class="py-20 px-6 max-w-7xl mx-auto border-b border-gray-100"
+    >
+      <div class="mb-12">
+        <h2
+          class="text-xs font-mono uppercase tracking-widest text-gray-500 mb-3"
+        >
+          Portafolio & Realizaciones
+        </h2>
+        <h3 class="text-3xl font-bold text-dark-900">
+          Aplicaciones Móviles & Sistemas Destacados
+        </h3>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <!-- Project 1 -->
+        <div
+          class="bg-gray-50 border border-gray-200 rounded-2xl p-8 flex flex-col justify-between"
+        >
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span
+                class="text-xs font-mono bg-dark-900 text-white px-2.5 py-1 rounded-md"
+                >Mobile App Ecosystem</span
+              >
+              <i data-lucide="smartphone" class="w-5 h-5 text-gray-500"></i>
+            </div>
+            <h4 class="text-xl font-bold text-dark-900 mb-3">
+              Plataforma Móvil Corporativa Multiplataforma
+            </h4>
+            <p class="text-sm text-gray-600 leading-relaxed mb-6">
+              Diseño y construcción de ecosistemas móviles nativos y
+              multiplataforma (Android Kotlin, iOS Swift, Flutter e Ionic
+              Cordova) con integración OCR para lectura de documentos, gestión
+              avanzada de estado, inyección de dependencias y sincronización en
+              tiempo real con pasarelas Backend de alta concurrencia.
+            </p>
+          </div>
+          <div
+            class="flex flex-wrap gap-2 pt-4 border-t border-gray-200 text-xs font-mono text-gray-600"
+          >
+            <span class="px-2.5 py-1 bg-white border border-gray-300 rounded"
+              >Flutter</span
+            >
+            <span class="px-2.5 py-1 bg-white border border-gray-300 rounded"
+              >Kotlin (Android)</span
+            >
+            <span class="px-2.5 py-1 bg-white border border-gray-300 rounded"
+              >Swift (iOS)</span
+            >
+            <span class="px-2.5 py-1 bg-white border border-gray-300 rounded"
+              >OCR / NLP</span
+            >
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div
+          class="bg-gray-50 border border-gray-200 rounded-2xl p-8 flex flex-col justify-between"
+        >
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span
+                class="text-xs font-mono bg-dark-900 text-white px-2.5 py-1 rounded-md"
+                >Banking & Enterprise API</span
+              >
+              <i data-lucide="shield" class="w-5 h-5 text-gray-500"></i>
+            </div>
+            <h4 class="text-xl font-bold text-dark-900 mb-3">
+              Arquitectura BIAN & Microservicios Multicapa
+            </h4>
+            <p class="text-sm text-gray-600 leading-relaxed mb-6">
+              Desarrollo de plataforma backend robusta en Java (Spring Boot y
+              Quarkus) siguiendo Clean Architecture y DDD. Modelado integral de
+              entidades financieras centrales (Clientes, Cuentas, Productos) con
+              despliegue orquestado en Red Hat OpenShift.
+            </p>
+          </div>
+          <div
+            class="flex flex-wrap gap-2 pt-4 border-t border-gray-200 text-xs font-mono text-gray-600"
+          >
+            <span class="px-2.5 py-1 bg-white border border-gray-300 rounded"
+              >Java / Spring Boot</span
+            >
+            <span class="px-2.5 py-1 bg-white border border-gray-300 rounded"
+              >OpenShift</span
+            >
+            <span class="px-2.5 py-1 bg-white border border-gray-300 rounded"
+              >Oracle / DB2</span
+            >
+            <span class="px-2.5 py-1 bg-white border border-gray-300 rounded"
+              >BIAN Standards</span
+            >
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div
+          class="bg-gray-50 border border-gray-200 rounded-2xl p-8 flex flex-col justify-between"
+        >
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span
+                class="text-xs font-mono bg-dark-900 text-white px-2.5 py-1 rounded-md"
+                >AI & Multi-Agent</span
+              >
+              <i data-lucide="cpu" class="w-5 h-5 text-gray-500"></i>
+            </div>
+            <h4 class="text-xl font-bold text-dark-900 mb-3">
+              Plataforma Conversacional & Automatización RAG
+            </h4>
+            <p class="text-sm text-gray-600 leading-relaxed mb-6">
+              Implementación de sistemas multi-agente en Python utilizando
+              LangChain, LangGraph y bases de datos vectoriales (ChromaDB,
+              pgvector) integradas con LLMs avanzados para automatización
+              inteligente de flujos documentales corporativos.
+            </p>
+          </div>
+          <div
+            class="flex flex-wrap gap-2 pt-4 border-t border-gray-200 text-xs font-mono text-gray-600"
+          >
+            <span class="px-2.5 py-1 bg-white border border-gray-300 rounded"
+              >Python</span
+            >
+            <span class="px-2.5 py-1 bg-white border border-gray-300 rounded"
+              >LangChain</span
+            >
+            <span class="px-2.5 py-1 bg-white border border-gray-300 rounded"
+              >RAG / Vector DB</span
+            >
+            <span class="px-2.5 py-1 bg-white border border-gray-300 rounded"
+              >OpenAI / Claude</span
+            >
+          </div>
+        </div>
+
+        <!-- Project 4 -->
+        <div
+          class="bg-gray-50 border border-gray-200 rounded-2xl p-8 flex flex-col justify-between"
+        >
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span
+                class="text-xs font-mono bg-dark-900 text-white px-2.5 py-1 rounded-md"
+                >Full-Stack & Cloud</span
+              >
+              <i data-lucide="globe" class="w-5 h-5 text-gray-500"></i>
+            </div>
+            <h4 class="text-xl font-bold text-dark-900 mb-3">
+              Plataformas Web Dinámicas & Modernización Monolítica
+            </h4>
+            <p class="text-sm text-gray-600 leading-relaxed mb-6">
+              Creación de portales web interactivos y escalables (Angular,
+              React, Node.js, PHP Laravel) con pipelines CI/CD automatizados en
+              GitLab Docker Swarm, observabilidad con Grafana y optimización
+              radical de tiempos de entrega.
+            </p>
+          </div>
+          <div
+            class="flex flex-wrap gap-2 pt-4 border-t border-gray-200 text-xs font-mono text-gray-600"
+          >
+            <span class="px-2.5 py-1 bg-white border border-gray-300 rounded"
+              >TypeScript / Angular</span
+            >
+            <span class="px-2.5 py-1 bg-white border border-gray-300 rounded"
+              >Node.js / NestJS</span
+            >
+            <span class="px-2.5 py-1 bg-white border border-gray-300 rounded"
+              >Docker / CI/CD</span
+            >
+            <span class="px-2.5 py-1 bg-white border border-gray-300 rounded"
+              >Redis</span
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="py-20 px-6 max-w-7xl mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+        <div>
+          <h2
+            class="text-xs font-mono uppercase tracking-widest text-gray-500 mb-3"
+          >
+            Contacto Directo
+          </h2>
+          <h3 class="text-3xl font-bold text-dark-900 mb-6">
+            Hablemos sobre tu próximo proyecto o propuesta
+          </h3>
+          <p class="text-gray-600 leading-relaxed mb-8">
+            Estoy disponible para colaborar en consultorías de arquitectura de
+            software, desarrollo backend de alto rendimiento, aplicaciones
+            móviles o liderazgo de ingeniería. Escríbeme directamente por
+            WhatsApp o correo electrónico.
+          </p>
+          <div class="space-y-4 text-sm text-gray-700">
+            <div class="flex items-center gap-3">
+              <div
+                class="w-10 h-10 bg-gray-100 rounded-lg flex items-center justify-center text-dark-900"
+              >
+                <i data-lucide="mail" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <div class="text-xs text-gray-500 font-mono">
+                  Correo Electrónico
+                </div>
+                <a
+                  href="mailto:pnfiuty.rramirez@gmail.com"
+                  class="font-bold text-dark-900 hover:underline"
+                  >pnfiuty.rramirez@gmail.com</a
+                >
+              </div>
+            </div>
+            <div class="flex items-center gap-3">
+              <div
+                class="w-10 h-10 bg-gray-100 rounded-lg flex items-center justify-center text-dark-900"
+              >
+                <i data-lucide="phone" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <div class="text-xs text-gray-500 font-mono">
+                  Teléfono / WhatsApp
+                </div>
+                <a
+                  href="https://wa.me/584121727103?text=Hola%20Ram%C3%B3n,%20estoy%20interesado%20en%20conversar%20contigo%20sobre%20una%20propuesta%20profesional."
+                  target="_blank"
+                  class="font-bold text-dark-900 hover:underline"
+                  >+58 412 1727103</a
+                >
+              </div>
+            </div>
+            <div class="flex items-center gap-3">
+              <div
+                class="w-10 h-10 bg-gray-100 rounded-lg flex items-center justify-center text-dark-900"
+              >
+                <!-- SVG oficial de LinkedIn -->
+                <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                  <path
+                    d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
+                  />
+                </svg>
+              </div>
+              <div>
+                <div class="text-xs text-gray-500 font-mono">LinkedIn</div>
+                <a
+                  href="https://linkedin.com/in/ramon-ramirez-76b5b366"
+                  target="_blank"
+                  class="font-bold text-dark-900 hover:underline"
+                  >linkedin.com/in/ramon-ramirez-76b5b366</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Form / Interactive Box -->
+        <div class="bg-gray-50 border border-gray-200 rounded-2xl p-8">
+          <h4 class="font-bold text-dark-900 text-lg mb-4">
+            Enviar Mensaje Rápido
+          </h4>
+          <form
+            id="contact-form"
+            onsubmit="handleContact(event)"
+            class="space-y-4"
+          >
+            <div>
+              <label
+                class="block text-xs font-mono text-gray-600 uppercase tracking-wider mb-1"
+                >Tu Nombre</label
+              >
+              <input
+                type="text"
+                id="form-name"
+                required
+                class="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-sm text-dark-900 focus:outline-none focus:border-dark-900 transition-colors"
+                placeholder="Ej. Carlos Mendoza"
+              />
+            </div>
+            <div>
+              <label
+                class="block text-xs font-mono text-gray-600 uppercase tracking-wider mb-1"
+                >Correo Electrónico</label
+              >
+              <input
+                type="email"
+                id="form-email"
+                required
+                class="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-sm text-dark-900 focus:outline-none focus:border-dark-900 transition-colors"
+                placeholder="carlos@empresa.com"
+              />
+            </div>
+            <div>
+              <label
+                class="block text-xs font-mono text-gray-600 uppercase tracking-wider mb-1"
+                >Mensaje o Propuesta</label
+              >
+              <textarea
+                id="form-msg"
+                rows="4"
+                required
+                class="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-sm text-dark-900 focus:outline-none focus:border-dark-900 transition-colors"
+                placeholder="Cuéntame sobre tu proyecto o propuesta profesional..."
+              ></textarea>
+            </div>
+            <button
+              type="submit"
+              class="w-full py-4 bg-dark-900 hover:bg-gray-800 text-white rounded-lg text-xs font-semibold uppercase tracking-wider transition-all flex items-center justify-center gap-2 shadow-sm"
+            >
+              <i data-lucide="send" class="w-4 h-4"></i> Enviar Mensaje a
+              WhatsApp
+            </button>
+            <div
+              id="form-feedback"
+              class="text-xs text-emerald-600 font-medium text-center hidden pt-2"
+            >
+              ¡Redirigiendo a WhatsApp con tu mensaje!
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-dark-900 text-white py-12 px-6">
+      <div
+        class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 text-sm text-gray-400"
+      >
+        <div class="flex items-center gap-3">
+          <div
+            class="w-8 h-8 bg-white text-dark-900 font-bold flex items-center justify-center rounded-md text-xs"
+          >
+            R³
+          </div>
+          <span class="text-white font-semibold">Ramón Ramírez</span>
+        </div>
+        <div>
+          © 2026 Todos los derechos reservados. Arquitectura de Software &
+          Full-Stack.
+        </div>
+        <div class="flex items-center gap-4">
+          <a
+            href="https://wa.me/584121727103?text=Hola%20Ram%C3%B3n,%20estoy%20interesado%20en%20conversar%20contigo%20sobre%20una%20propuesta%20profesional."
+            target="_blank"
+            class="hover:text-white transition-colors"
+            aria-label="WhatsApp"
+            ><i data-lucide="message-square" class="w-5 h-5"></i
+          ></a>
+          <a
+            href="https://linkedin.com/in/ramon-ramirez-76b5b366"
+            target="_blank"
+            class="hover:text-white transition-colors"
+            aria-label="LinkedIn"
+          >
+            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+              <path
+                d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
+              />
+            </svg>
+          </a>
+          <a
+            href="mailto:pnfiuty.rramirez@gmail.com"
+            class="hover:text-white transition-colors"
+            aria-label="Correo"
+            ><i data-lucide="mail" class="w-5 h-5"></i
+          ></a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- BOTÓN FLOTANTE "SUBIR AL INICIO" -->
+    <button
+      id="back-to-top"
+      class="fixed bottom-6 right-6 z-30 p-3.5 bg-dark-900 text-white rounded-full shadow-2xl opacity-0 translate-y-4 pointer-events-none transition-all duration-300 hover:bg-gray-800 focus:outline-none"
+      aria-label="Subir al inicio"
+    >
+      <i data-lucide="arrow-up" class="w-5 h-5"></i>
+    </button>
+
+    <!-- JavaScript para Menú, Scroll Suave y Botón Top -->
+    <script>
+      // Inicializar iconos de Lucide
+      lucide.createIcons();
+
+      // Control del Menú Móvil Izquierdo
+      const menuBtn = document.getElementById("menu-btn");
+      const closeMenuBtn = document.getElementById("close-menu-btn");
+      const mobileMenu = document.getElementById("mobile-menu");
+      const menuOverlay = document.getElementById("menu-overlay");
+      const mobileLinks = document.querySelectorAll(".mobile-link");
+
+      function toggleMenu() {
+        const isOpen = mobileMenu.classList.contains("translate-x-0");
+        if (isOpen) {
+          mobileMenu.classList.remove("translate-x-0");
+          mobileMenu.classList.add("-translate-x-full");
+          menuOverlay.classList.add("hidden");
+          document.body.style.overflow = "";
+        } else {
+          mobileMenu.classList.remove("-translate-x-full");
+          mobileMenu.classList.add("translate-x-0");
+          menuOverlay.classList.remove("hidden");
+          document.body.style.overflow = "hidden";
+        }
+      }
+
+      menuBtn.addEventListener("click", toggleMenu);
+      closeMenuBtn.addEventListener("click", toggleMenu);
+      menuOverlay.addEventListener("click", toggleMenu);
+
+      // Efecto Smooth Scroll optimizado y cierre automático del menú móvil al hacer click
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const targetId = this.getAttribute("href");
+          if (targetId === "#") {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+            return;
+          }
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            // Si el menú móvil está abierto, cerrarlo
+            if (mobileMenu.classList.contains("translate-x-0")) {
+              toggleMenu();
+            }
+            targetElement.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
+            });
+          }
+        });
+      });
+
+      // Botón "Subir al inicio" (aparece al hacer scroll hacia abajo)
+      const backToTopBtn = document.getElementById("back-to-top");
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 400) {
+          backToTopBtn.classList.remove(
+            "opacity-0",
+            "translate-y-4",
+            "pointer-events-none",
+          );
+          backToTopBtn.classList.add("opacity-100", "translate-y-0");
+        } else {
+          backToTopBtn.classList.add(
+            "opacity-0",
+            "translate-y-4",
+            "pointer-events-none",
+          );
+          backToTopBtn.classList.remove("opacity-100", "translate-y-0");
+        }
+      });
+
+      backToTopBtn.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+
+      // Formulario de contacto hacia WhatsApp
+      function handleContact(e) {
+        e.preventDefault();
+        const name = document.getElementById("form-name").value;
+        const email = document.getElementById("form-email").value;
+        const msg = document.getElementById("form-msg").value;
+
+        const text = `Hola Ramón, mi nombre es *${name}* (${email}). Me pongo en contacto contigo para lo siguiente: ${msg}`;
+        const encodedText = encodeURIComponent(text);
+        const whatsappUrl = `https://wa.me/584121727103?text=${encodedText}`;
+
+        const feedback = document.getElementById("form-feedback");
+        feedback.classList.remove("hidden");
+
+        setTimeout(() => {
+          window.open(whatsappUrl, "_blank");
+          feedback.classList.add("hidden");
+          document.getElementById("contact-form").reset();
+        }, 1000);
+      }
+    </script>
+  </body>
+</html>
